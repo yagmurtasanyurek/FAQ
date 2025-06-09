@@ -13,15 +13,27 @@ function Accordion({ items }) {
 
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedIndex;
-    const content = isExpanded && <div>{item.content}</div>;
+    const content = isExpanded && (
+      <div className="bg-amber-100 rounded-md p-3 ">{item.content}</div>
+    );
 
     const icon = (
       <span>{isExpanded ? <GoChevronDown /> : <GoChevronLeft />}</span>
     );
 
+    const borderClasses = `border-2 border-black ${
+      index !== 0 ? "border-t-0" : ""
+    }`;
+
     return (
-      <div key={item.id}>
-        <div onClick={() => handleClick(index)}>
+      <div
+        key={item.id}
+        className={` rounded-md ${borderClasses} bg-amber-100 p-3`}
+      >
+        <div
+          onClick={() => handleClick(index)}
+          className="flex justify-between items-center"
+        >
           {item.label}
           {icon}
         </div>
@@ -30,6 +42,6 @@ function Accordion({ items }) {
     );
   });
 
-  return <div>{renderedItems}</div>;
+  return <div className="w-100 min-w-min">{renderedItems}</div>;
 }
 export default Accordion;
