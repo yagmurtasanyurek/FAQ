@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { GoChevronLeft, GoChevronDown } from "react-icons/go";
+import Yellow from "../images/yellowstar.png";
+import Blue from "../images/bluestar.png";
+import Pink from "../images/pinkstar.png";
+import Green from "../images/greenstar.png";
 
 function Accordion({ items }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);
@@ -37,11 +41,33 @@ function Accordion({ items }) {
           {item.label}
           {icon}
         </div>
+
         {content}
       </div>
     );
   });
 
-  return <div className="w-100 min-w-min">{renderedItems}</div>;
+  return (
+    <div className=" relative w-140 min-w-min m-10">
+      <img
+        src={Yellow}
+        className="absolute -top-10 -left-10 w-8 h-8 image-pixel"
+      />
+      <img
+        src={Blue}
+        className="absolute -bottom-10 -left-10 w-8 h-8 image-pixel"
+      />
+      <img
+        src={Pink}
+        className="absolute -bottom-10 -right-10 w-8 h-8 image-pixel"
+      />
+      <img
+        src={Green}
+        className="absolute -top-10 -right-10 w-8 h-8 image-pixel"
+      />
+
+      {renderedItems}
+    </div>
+  );
 }
 export default Accordion;

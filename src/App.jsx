@@ -22,7 +22,7 @@ const list = [
   },
   {
     id: nanoid(),
-    label: "What are your other hobbies?",
+    label: "What are your hobbies?",
     content:
       "I'm a bookworm. I enjoy drawing animals and practicing Muay Thai.",
   },
@@ -30,7 +30,7 @@ const list = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-red-400 flex justify-center items-center">
+    <div className="min-h-screen relative bg-red-400 flex justify-center items-center">
       <Accordion items={list} />
     </div>
   );
