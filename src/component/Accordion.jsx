@@ -51,18 +51,22 @@ function Accordion({ items }) {
     <div className=" relative w-140 min-w-min m-10">
       <img
         src={Yellow}
+        alt="pixelated sparkle art"
         className="absolute -top-10 -left-10 w-8 h-8 image-pixel"
       />
       <img
         src={Blue}
+        alt="pixelated sparkle art"
         className="absolute -bottom-10 -left-10 w-8 h-8 image-pixel"
       />
       <img
         src={Pink}
+        alt="pixelated sparkle art"
         className="absolute -bottom-10 -right-10 w-8 h-8 image-pixel"
       />
       <img
         src={Green}
+        alt="pixelated sparkle art"
         className="absolute -top-10 -right-10 w-8 h-8 image-pixel"
       />
 
